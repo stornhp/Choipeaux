@@ -25,6 +25,7 @@ bot.on('message', message => {
         }
         else
         {
+            random()
             if (randnum ==1) {
                 message.reply("Sage es-tu... Je ne vois qu'une option... SERDAIGLE !");
                 guildMember.addRole(process.env.SERDAIGLE)
