@@ -28,24 +28,24 @@ bot.on('message', message => {
             random()
             if (randnum ==1) {
                 message.reply("Sage es-tu... Je ne vois qu'une option... SERDAIGLE !");
-                guildMember.addRole(process.env.SERDAIGLE)
+                guildMember.addRoles([process.env.SERDAIGLE, process.env.ELEVE])
                 console.log(`${message.author.username} est devenu Serdaigle.`);
             }
             if (randnum ==2) {
                 message.reply("Ambitieux est-tu... Seul... SERPENTARD pourras t'aider à grandir sur le chemin de la Puissance Ultime !");
-                guildMember.addRole(process.env.SERPENTARD)
+                guildMember.addRoles([process.env.SERPENTARD, process.env.ELEVE])
                 console.log(`${message.author.username} est devenu Serpentard.`);
             }
 
             if (randnum ==3) {
                 message.reply("Courageux es-tu... Je vois la seule maison qui t'acceptera... GRYFFONDOR !");
-                guildMember.addRole(process.env.GRYFFONDOR)
+                guildMember.addRoles([process.env.GRYFFONDOR, process.env.ELEVE])
                 console.log(`${message.author.username} est devenu Gryffondor.`);
             }
 
             if (randnum ==4) {
                 message.reply("Modeste es-tu... Je crois, que seul POUFSOUFFLE aura le charme de te faire aimer Poudlard !");
-                guildMember.addRole(process.env.POUFSOUFFLE)
+                guildMember.addRoles([process.env.POUFSOUFFLE, process.env.ELEVE])
                 console.log(`${message.author.username} est devenu Poufsouffle.`);
             }
         }
