@@ -16,15 +16,20 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
     const guildMember = message.member;
-    if(message.content[0] === PREFIX) {
-        if(message.content === "!choipeaux") {
-            random()
+    let prefix = "!"
+    
+    if (message.content === prefix + "choipeaux") {
+        if (message.member.roles.get('438965241590841346')) {
+            message.reply("Tu as déjà été attribué(e) à une maison.");
+            console.log("Quelqu'un a essayé de s'attribuer une deuxième maison.")
+        }
+        else
+        {
             if (randnum ==1) {
                 message.reply("Sage es-tu... Je ne vois qu'une option... SERDAIGLE !");
                 guildMember.addRole(process.env.SERDAIGLE)
                 console.log(`${message.author.username} est devenu Serdaigle.`);
             }
-
             if (randnum ==2) {
                 message.reply("Ambitieux est-tu... Seul... SERPENTARD pourras t'aider à grandir sur le chemin de la Puissance Ultime !");
                 guildMember.addRole(process.env.SERPENTARD)
@@ -38,13 +43,12 @@ bot.on('message', message => {
             }
 
             if (randnum ==4) {
-                message.reply("Modeste es-tu... Je crois, que seul POUFSOUFFLE aura le charme de te faire aimer Poudlard !")
+                message.reply("Modeste es-tu... Je crois, que seul POUFSOUFFLE aura le charme de te faire aimer Poudlard !");
                 guildMember.addRole(process.env.POUFSOUFFLE)
-                console.log(`${message.author.username} est devenu Poufsouffle`);
+                console.log(`${message.author.username} est devenu Poufsouffle.`);
             }
         }
     }
 });
 
 bot.login(process.env.TOKEN);
-
